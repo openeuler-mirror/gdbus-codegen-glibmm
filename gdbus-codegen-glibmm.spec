@@ -1,0 +1,41 @@
+%global debug_package %{nil}
+Name:           gdbus-codegen-glibmm
+Version:        1.0.0
+Release:        1%{?dist}
+Summary:        This is a cpp code generator for generating D-Bus stubs and proxies from XML introspection files.
+
+License:        LGPL-2.1
+Source0:        %{name}-%{version}.tar.gz
+
+BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  python%{python3_pkgversion}-setuptools
+BuildRequires:  python%{python3_pkgversion}-jinja2
+
+%description
+This is a cpp code generator for generating D-Bus stubs and proxies from XML introspection files.
+
+
+%prep
+%autosetup -p1
+
+
+%build
+%{py3_build}
+
+%install
+rm -rf $RPM_BUILD_ROOT
+%{py3_install}
+
+
+%files
+%{_bindir}/gdbus-codegen-glibmm3
+%dir %{python3_sitelib}/codegen_glibmm
+%dir %{python3_sitelib}/gdbus_codegen.glibmm-2.99.0-py3.8.egg-info
+%{python3_sitelib}/codegen_glibmm/*
+%{python3_sitelib}/gdbus_codegen.glibmm-2.99.0-py3.8.egg-info/*
+
+
+%changelog
+* Thu Apr  1 2021 tangjie02 <tangjie02@kylinos.com.cn> - 1.0.0-1.ky3
+- New upstream source 1.0
+- 
