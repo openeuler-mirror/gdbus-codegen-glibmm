@@ -32,10 +32,14 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{python3_sitelib}/codegen_glibmm
 %ifnarch riscv64
 %dir %{python3_sitelib}/gdbus_codegen.glibmm-2.99.0-py3.8.egg-info
+%else
+%dir %{python3_sitelib}/gdbus_codegen.glibmm-2.99.0-py3.7.egg-info
 %endif
 %{python3_sitelib}/codegen_glibmm/*
 %ifnarch riscv64
 %{python3_sitelib}/gdbus_codegen.glibmm-2.99.0-py3.8.egg-info/*
+%else
+%{python3_sitelib}/gdbus_codegen.glibmm-2.99.0-py3.7.egg-info/*
 %endif
 
 %changelog
