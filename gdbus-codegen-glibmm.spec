@@ -30,9 +30,17 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %{_bindir}/gdbus-codegen-glibmm3
 %dir %{python3_sitelib}/codegen_glibmm
+%ifnarch riscv64
+%dir %{python3_sitelib}/gdbus_codegen.glibmm-2.99.0-py3.8.egg-info
+%else
 %dir %{python3_sitelib}/gdbus_codegen.glibmm-2.99.0-py3.7.egg-info
+%endif
 %{python3_sitelib}/codegen_glibmm/*
+%ifnarch riscv64
+%{python3_sitelib}/gdbus_codegen.glibmm-2.99.0-py3.8.egg-info/*
+%else
 %{python3_sitelib}/gdbus_codegen.glibmm-2.99.0-py3.7.egg-info/*
+%endif
 
 %changelog
 * Mon Aug 16 2021 xinminst <xuzhiling19991120@163.com> - 1.0.0-2.ky3
