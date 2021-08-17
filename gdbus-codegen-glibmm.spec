@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 Name:           gdbus-codegen-glibmm
 Version:        1.0.0
-Release:        2%{?dist}
+Release:        2
 Summary:        This is a cpp code generator for generating D-Bus stubs and proxies from XML introspection files.
 
 License:        LGPL-2.1
@@ -43,7 +43,7 @@ rm -rf $RPM_BUILD_ROOT
 %endif
 
 %changelog
-* Mon Aug 16 2021 xinminst <xuzhiling19991120@163.com> - 1.0.0-2.ky3
+* Mon Aug 16 2021 xinminst <xuzhiling19991120@163.com> - 1.0.0-2
 - adapt to riscv64
 
 * Thu Apr  1 2021 tangjie02 <tangjie02@kylinos.com.cn> - 1.0.0-1.ky3
